@@ -1,0 +1,209 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <!-- Search Bar -->
+    <div class="search-container">
+    <input type="text" id="countrySearch" placeholder="Search for a country..." onkeyup="searchCountry()">
+    <button onclick="searchCountry()">Search</button>
+</div>
+
+    <div class="container-1">
+        <h1>Country Data (INR-₹)</h1>
+        <button onclick="showAddForm()">Add Country</button>
+        <div id="countryForm" class="form-container" style="display:none;">
+            <h2 id="formTitle">Add Country</h2>
+            <input type="text" id="rank" placeholder="Rank" required>
+            <input type="text" id="country" placeholder="Country Name" required>
+            <input type="number" id="costOfLiving" placeholder="Cost of Living" required>
+            <input type="number" id="rentIndex" placeholder="Rent Index" required>
+            <input type="number" id="groceriesIndex" placeholder="Groceries Index" required>
+            <input type="number" id="restaurantIndex" placeholder="Restaurant Index" required>
+            <input type="number" id="localPurchase" placeholder="Local Purchase" required>
+            <button onclick="saveCountry()">Save</button>
+            <button onclick="hideForm()">Cancel</button>
+        </div>
+        <table style="border-collapse: collapse;">
+            <thead>
+                <tr>
+                    <th class="column-header" style="border: 1px solid black;">
+                        Rank
+                        <button class="sort-btn" onclick="sortTable(0)">&#9650;</button>
+                        <button class="sort-btn" onclick="sortTable(0, true)">&#9660;</button>
+                    </th>
+                    <th class="column-header" style="border: 1px solid black;">
+                        Country
+                        <button class="sort-btn" onclick="sortTable(1)">&#9650;</button>
+                        <button class="sort-btn" onclick="sortTable(1, true)">&#9660;</button>
+                    </th>
+                    <th class="column-header" style="border: 1px solid black;">
+                        Cost of Living
+                        <button class="sort-btn" onclick="sortTable(2)">&#9650;</button>
+                        <button class="sort-btn" onclick="sortTable(2, true)">&#9660;</button>
+                    </th>
+                    <th class="column-header" style="border: 1px solid black;">
+                        Rent Index
+                        <button class="sort-btn" onclick="sortTable(3)">&#9650;</button>
+                        <button class="sort-btn" onclick="sortTable(3, true)">&#9660;</button>
+                    </th>
+                    <th class="column-header" style="border: 1px solid black;">
+                        Groceries Index
+                        <button class="sort-btn" onclick="sortTable(4)">&#9650;</button>
+                        <button class="sort-btn" onclick="sortTable(4, true)">&#9660;</button>
+                    </th>
+                    <th class="column-header" style="border: 1px solid black;">
+                        Restaurant Index
+                        <button class="sort-btn" onclick="sortTable(5)">&#9650;</button>
+                        <button class="sort-btn" onclick="sortTable(5, true)">&#9660;</button>
+                    </th>
+                    <th class="column-header" style="border: 1px solid black;">
+                        Local Purchase
+                        <button class="sort-btn" onclick="sortTable(6)">&#9650;</button>
+                        <button class="sort-btn" onclick="sortTable(6, true)">&#9660;</button>
+                    </th>
+                    <th class="column-header" style="border: 1px solid black;">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for country in countries %}
+                    <tr>
+                        <td style="border: 1px solid black;">{{ country.Rank }}</td>
+                        <td style="border: 1px solid black;">{{ country.Country }}</td>
+                        <td style="border: 1px solid black;">{{ country.Cost_Of_Living }}</td>
+                        <td style="border: 1px solid black;">{{ country.Rent_Index }}</td>
+                        <td style="border: 1px solid black;">{{ country.Groceries_Index }}</td>
+                        <td style="border: 1px solid black;">{{ country.Restaurant_Index }}</td>
+                        <td style="border: 1px solid black;">{{ country.Local_Purchase }}</td>
+                        <td style="border: 1px solid black;">
+                            <button onclick="editCountry({{ country.Rank }})">Edit</button>
+                            <form action="{{ url_for('delete_country', rank=country.Rank) }}" method="POST" style="display:inline ;">
+                                <button type="submit">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="/home" class="btn">HOME</a>
+    </div>
+    <script>
+        function sortTable(columnIndex, isDescending = false) {
+            var table = document.querySelector("table tbody");
+            var rows = Array.from(table.rows);
+            var sortedRows = rows.sort((a, b) => {
+                var aText = a.cells[columnIndex].textContent.trim();
+                var bText = b.cells[columnIndex].textContent.trim();
+                return isDescending ? (aText < bText ? 1 : -1) : (aText > bText ? 1 : -1);
+            });
+
+            // Clear the table and append sorted rows
+            while (table.firstChild) {
+                table.removeChild(table.firstChild);
+            }
+            sortedRows.forEach(row => table.appendChild(row));
+        }
+
+        function searchCountry() {
+            var input = document.getElementById("countrySearch");
+            var filter = input.value.toUpperCase();
+            var table = document.querySelector("table tbody");
+            var rows = table.getElementsByTagName("tr");
+
+            // Loop through all table rows, except the header
+            for (var i = 0; i < rows.length; i++) {
+                var countryCell = rows[i].getElementsByTagName("td")[1]; // The "Country" column is at index 1
+                if (countryCell) {
+                    var countryName = countryCell.textContent || countryCell.innerText;
+                    if (countryName.toUpperCase().indexOf(filter) > -1) {
+                        rows[i].style.display = ""; // Show the row if it matches the search
+                    } else {
+                        rows[i].style.display = "none"; // Hide the row if it doesn't match
+                    }
+                }
+            }
+        }
+
+        function showAddForm() {
+            document.getElementById('countryForm').style.display = 'block';
+            document.getElementById('formTitle').innerText = 'Add Country';
+            document.getElementById('rank').value = '';
+            document.getElementById('country').value = '';
+            document.getElementById('costOfLiving').value = '';
+            document.getElementById('rentIndex').value = '';
+            document.getElementById('groceriesIndex').value = '';
+            document.getElementById('restaurantIndex').value = '';
+            document.getElementById('localPurchase').value = '';
+        }
+
+        function hideForm() {
+            document.getElementById('countryForm').style.display = 'none';
+        }
+
+        function editCountry(rank) {
+            fetch(`/api/country/${rank}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('countryForm').style.display = 'block';
+                    document.getElementById('formTitle').innerText = 'Edit Country';
+                    document.getElementById('rank').value = data.rank;
+                    document.getElementById('country').value = data.country;
+                    document.getElementById('costOfLiving').value = data.costOfLiving;
+                    document.getElementById('rentIndex').value = data.rentIndex;
+                    document.getElementById('groceriesIndex').value = data.groceriesIndex;
+                    document.getElementById('restaurantIndex').value = data.restaurantIndex;
+                    document.getElementById('localPurchase').value = data.localPurchase;
+                });
+        }
+
+        function saveCountry() {
+            const rank = document.getElementById("rank").value;
+            const country = document.getElementById("country").value;
+            const costOfLiving = document.getElementById("costOfLiving").value;
+            const rentIndex = document.getElementById("rentIndex").value;
+            const groceriesIndex = document.getElementById("groceriesIndex").value;
+            const restaurantIndex = document.getElementById("restaurantIndex").value;
+            const localPurchase = document.getElementById("localPurchase").value;
+
+            const data = {
+                rank: rank,
+                country: country,
+                costOfLiving: costOfLiving,
+                rentIndex: rentIndex,
+                groceriesIndex: groceriesIndex,
+                restaurantIndex: restaurantIndex,
+                localPurchase: localPurchase
+            };
+
+            if (document.getElementById('formTitle').innerText === 'Edit Country') {
+                fetch(`/update_country/${rank}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: new URLSearchParams(data)
+                })
+                .then(() => {
+                    location.reload();
+                });
+            } else {
+                fetch('/add_country', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: new URLSearchParams(data)
+                })
+                .then(() => {
+                    location.reload();
+                });
+            }
+        }
+    </script>
+    <footer style="background-color: #0044cc; color: white; padding: 20px; text-align: center;">
+    <p>Phone:080-81270015</p>
+    <p>Gmail: <a href="mailto:contact@example.com" style="color: white; text-decoration: underline;">costindex@gmail.com</a></p>
+    <p>&copy; 2024 Cost of Living. All rights reserved.</p>
+    <p style="color: white; text-decoration: underline;">Privacy And Policy</p>
+</footer>
+
+
+{% endblock %}

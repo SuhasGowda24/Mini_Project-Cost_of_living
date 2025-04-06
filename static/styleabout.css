@@ -1,0 +1,267 @@
+/* Add any additional styles for the navbar here if needed */
+        /* aboutus page General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #0044cc;
+    color: #e3dbdb;
+  }
+
+  h2, h3, h5 {
+    color: #ede9e9;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .container {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  /* Team Section */
+  .team-section {
+    padding: 50px 0;
+    text-align: center;
+    background-color: #cdcccc;
+    margin-top: 10px;
+  }
+
+  .team-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+
+  .team-section p {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: #070707;
+  }
+
+  .team-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .team-member {
+    background-color: white;
+    padding: 20px;
+    margin: 15px;
+    width: 250px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .team-member:hover {
+    transform: scale(1.05);
+  }
+
+  .team-member img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .team-member h3 {
+    font-size: 1.5rem;
+    margin-top: 15px;
+    color: #232121;
+  }
+
+  .team-member p {
+    color: #0044cc;
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .social-icons a {
+    margin: 0 10px;
+    color: #333;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    color: #0077b5; /* LinkedIn blue */
+  }
+
+
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    footer .container {
+        padding: 0 10px;
+    }
+
+    footer .social-icons{
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    footer .social-icons li {
+        margin: 10px;
+    }
+  }
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  }
+
+  body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+  }
+
+  .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+  }
+
+  .budget-form {
+      background: white;
+      padding: 1rem;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+  }
+
+  input, select, button {
+      padding: 0.5rem;
+      margin: 0.5rem;
+  }
+
+  button {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+  }
+
+  .summary {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 1rem;
+  }
+
+  .summary > div {
+      background: white;
+      padding: 1rem;
+      border-radius: 5px;
+      text-align: center;
+  }
+
+  .transactions {
+      background: white;
+      padding: 1rem;
+      border-radius: 5px;
+  }
+
+  .transaction-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem;
+      border-bottom: 1px solid #eee;
+  }
+
+  .income-item {
+      color: #4CAF50;
+  }
+
+  .expense-item {
+      color: #f44336;
+  }
+ header {
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 60px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2em;
+    margin: 0;
+}
+.logo {
+            font-family: 'Arial', sans-serif;
+            font-size: 48px;
+            font-weight: bold;
+            color: #007bff;
+            text-transform: uppercase;
+        }
+        .logo span {
+            color: #28a745;
+        }
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            background-color: #f8f9fa;
+        }
+
+        .navbar {
+            background-color: #0044cc;
+            color: white;
+            padding: 10px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            right: -20px; /* Move the navbar to the right side */
+            text-align: left;
+            z-index: 1000;
+        }
+        .navbar .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 2px;
+        }
+
+        .navbar  a {
+            color: white;
+            font-size: 30px;
+
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin:10px;
+            padding: 2px;
+
+        }
+
+        .nav-links li {
+            padding-left: 0px;
+            margin-right:10px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 10px;
+        }
+
+        .nav-links a:hover {
+            background-color: #575757;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }

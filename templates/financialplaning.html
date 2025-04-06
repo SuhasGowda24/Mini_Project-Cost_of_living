@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Student Expenses and Financial Planning</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #0044cc;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            display: flex; /* Added for flexbox layout */
+      justify-content: space-between; /* Added for horizontal alignment */
+      align-items: center; /* Added for vertical alignment */
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 2rem;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section h2 {
+            color: #0044cc;
+            margin-bottom: 1rem;
+        }
+
+        .tips {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .tips li {
+            background-color: #e2e2e2;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #0044cc;
+            color: white;
+        }
+
+        td {
+            background-color: #f9f9f9;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #0044cc;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+          .hero-section {
+            background-image: url('https://source.unsplash.com/featured/?finance');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 50px 0;
+        }
+        .content-section {
+            padding: 30px 0;
+        }
+        .card img {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .logo {
+            font-family: 'Arial', sans-serif;
+            font-size: 48px;
+            font-weight: bold;
+            color: #007bff;
+            text-transform: uppercase;
+            background-color: white;
+        }
+
+        .logo span {
+            color: #28a745;
+        }
+
+        .navbar {
+            background-color: #0044cc;
+            color: white;
+            padding: 4px 30px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            right: 0px;
+            z-index: 1000;
+        }
+
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin:2px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            padding: 2px;
+            margin: 10px;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 7px;
+        }
+
+        .nav-links a:hover {
+            background-color: #575757;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+<header>
+        <nav class="navbar">
+            <div class="logo-container">
+                <div class="logo">
+                    Cost<span>Index</span>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/home"><b>Home</b></a></li>
+                <li><a href="/table"><b>Countries</b></a></li>
+                <li><a href="/aboutus"><b>About Us</b></a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+
+
+        <div class="content-section" style="margin-top: 60px;display: flex;justify-content: center">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="../static/image/budgeting.jpeg" class="card-img-top" alt="Budgeting">
+                        <div class="card-body">
+                            <h5 class="card-title">Budgeting</h5>
+                            <p class="card-text">Create a budget that suits your lifestyle and financial goals.</p>
+                            <a href="/budget" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 "style="display: flex;justify-content: right">
+                    <div class="card">
+                        <img src="../static/image/saving.jpeg" class="card-img-top" alt="Savings">
+                        <div class="card-body">
+                            <h5 class="card-title">Savings</h5>
+                            <p class="card-text">Learn strategies to save money and build a secure financial future.</p>
+                            <a href="/saving" class="btn btn-primary">Start Saving</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <section class="section">
+            <h2>Key Student Expenses</h2>
+            <p>As a student, it's important to manage your finances properly. Here are the most common expenses students face:</p>
+            <ul class="tips">
+                <li><strong>Tuition Fees:</strong> The largest expense for most students, often paid at the start of each semester or year.</li>
+                <li><strong>Housing and Rent:</strong> Whether you're living in dorms or renting off-campus, rent is a major monthly expense.</li>
+                <li><strong>Books and Supplies:</strong> Textbooks, course materials, and supplies for your studies.</li>
+                <li><strong>Food and Groceries:</strong> Budgeting for groceries or meal plans at school is essential.</li>
+                <li><strong>Transportation:</strong> Costs for commuting, whether by car, public transportation, or bike.</li>
+                <li><strong>Entertainment and Leisure:</strong> Budgeting for social activities, dining out, or hobbies.</li>
+                <li><strong>Health Insurance:</strong> Ensure that you're covered with affordable health insurance while you're a student.</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Tips for Financial Planning</h2>
+            <ul class="tips">
+                <li>Track your spending regularly to avoid overspending.</li>
+                <li>Create a monthly budget and stick to it.</li>
+                <li>Look for student discounts and deals on products and services.</li>
+                <li>Set aside a portion of your income or allowance for savings.</li>
+                <li>Consider taking on part-time work to offset some living expenses.</li>
+                <li>Minimize debt by avoiding unnecessary loans and credit card debt.</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Sample Budget</h2>
+            <p>Here is a sample budget for a student to help with financial planning:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Expense Category</th>
+                        <th>Estimated Monthly Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Tuition Fees</td>
+                        <td>₹1,200</td>
+                    </tr>
+                    <tr>
+                        <td>Housing (Rent)</td>
+                        <td>₹800</td>
+                    </tr>
+                    <tr>
+                        <td>Food and Groceries</td>
+                        <td>₹250</td>
+                    </tr>
+                    <tr>
+                        <td>Transportation</td>
+                        <td>₹100</td>
+                    </tr>
+                    <tr>
+                        <td>Books and Supplies</td>
+                        <td>₹50</td>
+                    </tr>
+                    <tr>
+                        <td>Entertainment</td>
+                        <td>₹100</td>
+                    </tr>
+                    <tr>
+                        <td>Miscellaneous</td>
+                        <td>₹50</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+    <footer style="background-color: #0044cc; color: white; padding: 20px; text-align: center;">
+        <p>Phone:080-81270015</p>
+    <p>Gmail: <a href="mailto:contact@example.com" style="color: white; text-decoration: underline;">costindex@gmail.com</a></p>
+    <p>&copy; 2024 Cost of Living. All rights reserved.</p>
+    <p style="color: white; text-decoration: underline;">Privacy And Policy</p>
+</footer>
+
+
+</body>
+</html>

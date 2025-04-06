@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cost of Living Index</title>
+
+    <!-- Add Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Optional TailwindCSS (remove if not used) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../static/styleabout.css">
+
+    <style>
+        .hover-box {
+            width: 30%;
+            padding: 20px;
+            border: 2px solid black;
+            border-radius: 10px;
+            background-color: #5890ac;
+            transition: border-color 0.3s, background-color 0.3s;
+            margin-bottom: 40px;
+            margin-top: 40px;
+        }
+
+        .hover-box:hover {
+            border-color: blue;
+            background-color: #62676c;
+        }
+        .logo {
+            font-family: 'Arial', sans-serif;
+            font-size: 48px;
+            font-weight: bold;
+            color: #007bff;
+            text-transform: uppercase;
+            background-color: white;
+        }
+
+        .logo span {
+            color: #28a745;
+        }
+
+        .navbar {
+            background-color: #0044cc;
+            color: white;
+            padding: 4px 30px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            right: 0px;
+            z-index: 1000;
+        }
+
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin:2px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            padding: 2px;
+            margin: 10px;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 7px;
+        }
+
+        .nav-links a:hover {
+            background-color: #575757;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Navbar -->
+   <header>
+        <nav class="navbar">
+            <div class="logo-container">
+                <div class="logo">
+                    Cost<span>Index</span>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/home"><b>Home</b></a></li>
+                <li><a href="/table"><b>Countries</b></a></li>
+                <li><a href="/aboutus"><b>About Us</b></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Vision and Mission Cards -->
+    <div style="display: flex; justify-content: space-around; margin-top: 50px;">
+        <div class="hover-box">
+            <h1 style="text-align: center; margin-bottom: 20px;color: black"><b>Vision</b></h1>
+            <p style="text-align: justify;color:white"><b>To help people understand and compare living costs globally.</b></p>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#visionModal">
+                See More
+            </button>
+        </div>
+        <div class="hover-box">
+            <h2 style="text-align: center; margin-bottom: 20px;color: black"><b>Mission</b></h2>
+            <p style="text-align: justify;color:white"><b>To provide clear and current data on living expenses in different countries.</b></p>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#missionModal">
+                See More
+            </button>
+        </div>
+    </div>
+
+    <!-- Vision Modal -->
+    <div class="modal fade" id="visionModal" tabindex="-1" role="dialog" aria-labelledby="visionModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="visionModalLabel" style="color: black">Vision</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    To provide a transparent and comprehensive global comparison of living costs. The website aims to empower users with the knowledge needed to make informed decisions about their living expenses and lifestyle choices<br>To empower individuals and organizations with accurate and timely information about the cost of living worldwide, enabling informed decision-making and global understanding.
+                    <br>To help people understand and compare living costs globally. Our goal is to provide a comprehensive and easy-to-use resource for anyone interested in comparing the cost of living across different countries and cities.
+                    <p><br>By showcasing cost of living data across different countries, the website aims to promote cultural exchange, economic development, and a better understanding of diverse living standards..To make it easy for everyone to understand and compare the cost of living in different countries.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mission Modal -->
+    <div class="modal fade" id="missionModal" tabindex="-1" role="dialog" aria-labelledby="missionModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="missionModalLabel" style="color: black">Mission</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <p>To provide clear and current data on living expenses in different countries. Our mission is to keep the data updated and accessible to users who need to make informed decisions about relocation, travel, or general knowledge. <br>To collect accurate data, analyze it, and share clear insights about the cost of living to help people make better decisions.<br>To present the information in a user-friendly and accessible manner. The website provides clear and concise data visualization, making it easy for users to understand and compare living costs.<br>To promote awareness and education about cost of living issues. The website aims to educate users about the factors that influence living costs and the implications of these costs on various aspects of life.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="team-section">
+        <p>The Cost of Living Index refers to the relative cost of goods and services, such as housing, food, transportation, healthcare, education, and entertainment, in a specific location.</p>
+        <p>Countries with a higher Cost of Living Index are generally more expensive to live in, while those with a lower index are more affordable.</p>
+        <h2 style="color: black">Our Team Members</h2>
+
+        <div class="team-container">
+            <div class="team-member">
+
+                <h3>Shashank D Urs</h3>
+                <p>Developer</p>
+                <div class="social-icons">
+                    <a href="" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="team-member">
+                <h3>Sakesh P</h3>
+                <p>Developer</p>
+                <div class="social-icons">
+                    <a href="" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="team-member">
+
+                <h3>Suhas S</h3>
+                <p>Developer</p>
+                <div class="social-icons">
+                    <a href="" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="team-member">
+                <h3>Yashwanth</h3>
+                <p>Developer</p>
+                <div class="social-icons">
+                    <a href="" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer Section -->
+<footer style="background-color: #0044cc; color: white; padding: 20px; text-align: center; margin-top: 60px">
+
+
+     <p>Phone:080-81270015</p>
+    <p>Gmail: <a href="mailto:contact@example.com" style="color: white; text-decoration: underline;">costindex@gmail.com</a></p>
+    <p>&copy; 2024 Cost of Living. All rights reserved.</p>
+    <p style="color: white; text-decoration: underline;">Privacy And Policy</p>
+
+
+</footer>
+
+
+    <!-- Add Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="page">
+    <section id="home">
+        <h1><b style="color: white">Welcome to the Cost of Living Index</b></h1>
+        <h3 style="color: white">Explore global cost of living data, compare countries, and plan your financial future.</h3>
+    </section>
+    </div>
+
+    <section id="cta">
+    <div class="container ">
+        <h2 style="color: #0044cc">Compare Countries</h2>
+
+        <p>Explore how the cost of living differs around the world.</p>
+        <a href="/table" class="btn">Comparison</a>
+        </div>
+
+    <!-- Container for Data Analysis -->
+        <div class="container ">
+            <h2 style="color: #0044cc">Data Analysis</h2>
+            <p>Analyzing Trends in Everyday living Costs</p>
+            <a href="/analyze" class="btn">Analyze</a>
+        </div>
+
+    <div class="container ">
+        <h2 style="color: #0044cc">Finance</h2>
+        <p>Plan your finances with accurate cost of living-insights.</p>
+        <a href="/finance" class="btn">Finance</a>
+    </div>
+
+    </section>
+
+     <footer style="background-color: #0044cc; color: white; padding: 20px; text-align: center;">
+     <p>Phone:080-81270015</p>
+    <p>Gmail: <a href="mailto:contact@example.com" style="color: white; text-decoration: underline;">costindex@gmail.com</a></p>
+    <p>&copy; 2024 Cost of Living. All rights reserved.</p>
+    <p style="color: white; text-decoration: underline;">Privacy And Policy</p>
+</footer>
+
+{% endblock %}

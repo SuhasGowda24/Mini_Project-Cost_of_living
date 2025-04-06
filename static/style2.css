@@ -1,0 +1,155 @@
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+/* Header Styling */
+header {
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 60px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+/* Main Section Styling */
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+.tip {
+    background: #ffffff;
+    max-width: 1000px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.tip h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #0044cc;
+}
+
+.tip p {
+    font-size: 1.2em;
+    color: black;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #0044cc;
+    color: white;
+    margin-top: 20px;
+}
+
+footer p {
+    font-size: 0.9em;
+    margin: 0;
+}
+         body {
+            background-color: #f8f9fa;
+        }
+        .header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .content {
+            padding: 20px;
+
+
+        }
+        .card {
+            margin: 20px 0;
+            color: black;
+            font-size: 1.2em;
+        }
+        .strategy-list {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 5px;
+
+
+        }
+        .strategy-list li {
+            background-color:darkgray;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+
+        }
+        .table-container {
+            margin-top: 40px;
+            text-align: center;
+            padding: 10px;
+            margin-left: auto; /* Change from 90px to auto */
+            margin-right: auto; /* Add this line to center the table */
+            width: fit-content;
+
+
+
+        }
+
+        .table-container th,td{
+
+            border: 1px solid black;
+            margin-left: 80px;
+
+
+        }
+        .table-container th{
+            background-color: #0044cc;
+            color: white;
+
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: white;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #007bff;
+            color: #fff;
+        }
